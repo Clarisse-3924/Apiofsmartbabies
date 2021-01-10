@@ -14,6 +14,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 import butterknife.BindView;
@@ -24,12 +28,14 @@ public class Login extends AppCompatActivity {
     private LoginButton login1;
     private TextView info;
     private ImageView profile;
+    CallbackManager callbackManager;
    @BindView(R.id.email1) EditText textEmail;
  @BindView(R.id.textView7) TextView  create;
   @BindView(R.id.Pass) EditText  textpass;
  @BindView(R.id.button2) Button login;
     @BindView(R.id.progressBar2) ProgressBar progressBar;
     private EditText Name;
+
 //EditText textEmail,textpass;
 //    TextView create;
 //    ProgressBar progressBar;
@@ -39,6 +45,9 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        info=findViewById(R.id.info);
+        profile=findViewById(R.id.profile);
+        callbackManager= CallbackManager.Factory.create();
         login= findViewById(R.id.login1);
         Name = (EditText) findViewById(R.id.name);
        ButterKnife.bind(this);
@@ -48,6 +57,25 @@ public class Login extends AppCompatActivity {
 ////        login = findViewById(R.id.button2);
 //
 //        progressBar = findViewById(R.id.progressBar2);
+
+        login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                info.setText("User id:"+ loginResult.getAccessToken().getUserId());
+                String imageURL = "https://graph.facebook.com/"+ loginResult.getAccessToken().getUserId()+"/picture?return_ssl_resources=1";
+                Picasso.get().load(imageURL).into(profile);
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
