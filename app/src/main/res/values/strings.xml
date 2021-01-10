@@ -4,4 +4,6 @@
     <string name="Logout">Logout</string>
     <string name="Admin">Admin</string>
     <string name="login">Login</string>
+    <string name="facebook_app_id">257533312463275</string>
+    <string name="fb_login_protocol_scheme">fb257533312463275</string>
 </resources>
