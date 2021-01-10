@@ -9,15 +9,21 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.facebook.login.widget.LoginButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public class Login extends AppCompatActivity {
+    private LoginButton login1;
+    private TextView info;
+    private ImageView profile;
    @BindView(R.id.email1) EditText textEmail;
  @BindView(R.id.textView7) TextView  create;
   @BindView(R.id.Pass) EditText  textpass;
@@ -33,7 +39,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        login= findViewById(R.id.login1);
         Name = (EditText) findViewById(R.id.name);
        ButterKnife.bind(this);
 ////        textEmail =findViewById(R.id.email1);
@@ -72,6 +78,7 @@ public class Login extends AppCompatActivity {
 
             }
         });
+
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
