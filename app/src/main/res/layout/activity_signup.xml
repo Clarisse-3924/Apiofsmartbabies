@@ -112,6 +112,19 @@
             android:text="Already have account? LOGIN HERE"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
+        <Button
+            android:id="@+id/login1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView4"
+            android:background="@color/colorPrimaryDark"
+            android:text="Login with facebook"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="normal|bold|italic">
+
+        </Button>
+
         <ProgressBar
             android:text="Create account"
             android:layout_below="@+id/textView4"

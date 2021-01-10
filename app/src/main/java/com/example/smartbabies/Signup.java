@@ -27,6 +27,7 @@ public class Signup extends AppCompatActivity {
 //    Button Register;
 //    TextView loginhere;
 //    ProgressBar progressBar;
+private Button login1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,14 @@ public class Signup extends AppCompatActivity {
 //        loginhere = findViewById(R.id.textView4);
 //        Register = findViewById(R.id.button);
 //        progressBar = findViewById(R.id.progressBar);
+        login1 =findViewById(R.id.login1);
+        login1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), facebooklogin.class));
+
+            }
+        });
 
         Register.setOnClickListener(new View.OnClickListener(){
             @Override

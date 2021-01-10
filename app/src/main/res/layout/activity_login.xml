@@ -100,18 +100,6 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/login1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView7"
-            android:background="@color/colorPrimaryDark"
-            android:text="Login with facebook"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="normal|bold|italic">
-
-        </Button>
 
 
         <ProgressBar

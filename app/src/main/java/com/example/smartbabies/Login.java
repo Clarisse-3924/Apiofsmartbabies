@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 
 
 public class Login extends AppCompatActivity {
-    private Button login1;
+
    @BindView(R.id.email1) EditText textEmail;
  @BindView(R.id.textView7) TextView  create;
   @BindView(R.id.Pass) EditText  textpass;
@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Name = (EditText) findViewById(R.id.name);
-        login1 =findViewById(R.id.login1);
+
        ButterKnife.bind(this);
 ////        textEmail =findViewById(R.id.email1);
 ////        textpass =  findViewById(R.id.Pass);
@@ -55,13 +55,7 @@ public class Login extends AppCompatActivity {
 //        progressBar = findViewById(R.id.progressBar2);
 
 
-        login1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), facebooklogin.class));
 
-            }
-        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

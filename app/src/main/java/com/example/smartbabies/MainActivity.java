@@ -80,6 +80,10 @@ ListView list_item;
         //redirect about us
         MainActivity.redirectActivity(this,Signup.class);
     }
+    public void Clickface(View view){
+        //redirect about us
+        MainActivity.redirectActivity(this,facebooklogin.class);
+    }
     public void ClickLogin(View view){
         //redirect about us
         MainActivity.redirectActivity(this,Login.class);

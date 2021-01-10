@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
         import com.squareup.picasso.Picasso;
 
 public class facebooklogin extends AppCompatActivity {
-    private TextView info,info1;
+    private TextView info;
     private ImageView profile;
     private LoginButton login;
     CallbackManager callbackManager;
@@ -35,6 +35,7 @@ public class facebooklogin extends AppCompatActivity {
                 info.setText("User id:"+ loginResult.getAccessToken().getUserId());
                 String imageURL = "https://graph.facebook.com/"+ loginResult.getAccessToken().getUserId()+"/picture?return_ssl_resources=1";
                 Picasso.get().load(imageURL).into(profile);
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
 
             @Override
@@ -47,11 +48,12 @@ public class facebooklogin extends AppCompatActivity {
 
             }
         });
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode,resultCode,data);
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
         callbackManager.onActivityResult(requestCode,resultCode,data);
     }
+
 }
