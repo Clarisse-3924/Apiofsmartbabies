@@ -99,6 +99,14 @@
             android:text="Already have account? CREATE ACCOUNT"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
+        <com.facebook.login.widget.LoginButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login1"
+            android:layout_below="@+id/textView7">
+        </com.facebook.login.widget.LoginButton>
+
+
         <ProgressBar
             android:text="Create account"
             android:layout_below="@+id/textView7"
