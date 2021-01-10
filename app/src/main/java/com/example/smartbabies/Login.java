@@ -1,6 +1,7 @@
 package com.example.smartbabies;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,17 +16,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public class Login extends AppCompatActivity {
-    private LoginButton login1;
-    private TextView info;
-    private ImageView profile;
-    CallbackManager callbackManager;
+    private Button login1;
    @BindView(R.id.email1) EditText textEmail;
  @BindView(R.id.textView7) TextView  create;
   @BindView(R.id.Pass) EditText  textpass;
@@ -42,11 +44,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        info=findViewById(R.id.info);
-        profile=findViewById(R.id.profile);
-        callbackManager= CallbackManager.Factory.create();
-        login= findViewById(R.id.login1);
         Name = (EditText) findViewById(R.id.name);
+        login1 =findViewById(R.id.login1);
        ButterKnife.bind(this);
 ////        textEmail =findViewById(R.id.email1);
 ////        textpass =  findViewById(R.id.Pass);
@@ -55,6 +54,14 @@ public class Login extends AppCompatActivity {
 //
 //        progressBar = findViewById(R.id.progressBar2);
 
+
+        login1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), facebooklogin.class));
+
+            }
+        });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
