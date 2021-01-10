@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Smart Babies</string>
+    <string name="Home">Home</string>
+    <string name="Logout">Logout</string>
+    <string name="Admin">Admin</string>
+    <string name="login">Login</string>
+</resources>
