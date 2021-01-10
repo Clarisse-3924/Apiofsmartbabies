@@ -15,9 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 import butterknife.BindView;
@@ -57,25 +54,6 @@ public class Login extends AppCompatActivity {
 ////        login = findViewById(R.id.button2);
 //
 //        progressBar = findViewById(R.id.progressBar2);
-
-        login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                info.setText("User id:"+ loginResult.getAccessToken().getUserId());
-                String imageURL = "https://graph.facebook.com/"+ loginResult.getAccessToken().getUserId()+"/picture?return_ssl_resources=1";
-                Picasso.get().load(imageURL).into(profile);
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
