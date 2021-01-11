@@ -37,6 +37,7 @@ public class facebooklogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
 
             }
         });
