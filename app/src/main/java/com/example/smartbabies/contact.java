@@ -19,8 +19,8 @@ private Button email,sms,call;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
         email = findViewById(R.id.email);
-        sms=findViewById(R.id.call);
-        call=findViewById(R.id.sms);
+        sms=findViewById(R.id.sms);
+        call=findViewById(R.id.call);
         sms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +43,7 @@ private Button email,sms,call;
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+918511812660"));
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "250781856044"));
                 if (ContextCompat.checkSelfPermission(contact.this,
                         Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(contact.this, new String[]{Manifest.permission.CALL_PHONE},1);

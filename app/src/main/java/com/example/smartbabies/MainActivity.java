@@ -88,6 +88,11 @@ ListView list_item;
         //redirect about us
         MainActivity.redirectActivity(this,Login.class);
     }
+    public void Clickcontact(View view){
+        //redirect about us
+        MainActivity.redirectActivity(this,contact.class);
+    }
+
 
     public void ClickLogout(View view){
         //close app
