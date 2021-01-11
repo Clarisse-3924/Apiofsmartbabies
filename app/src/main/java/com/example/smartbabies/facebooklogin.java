@@ -4,7 +4,8 @@ import androidx.annotation.Nullable;
 
         import android.content.Intent;
         import android.os.Bundle;
-        import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.ImageView;
         import android.widget.TextView;
 
         import com.facebook.CallbackManager;
@@ -18,6 +19,7 @@ public class facebooklogin extends AppCompatActivity {
     private TextView info;
     private ImageView profile;
     private LoginButton login;
+    private Button exit;
     CallbackManager callbackManager;
 
 
@@ -28,6 +30,7 @@ public class facebooklogin extends AppCompatActivity {
         info=findViewById(R.id.info);
         profile=findViewById(R.id.profile);
         login= findViewById(R.id.login);
+         exit= findViewById(R.id.btn);
         callbackManager= CallbackManager.Factory.create();
         login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
